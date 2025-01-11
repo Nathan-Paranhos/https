@@ -1,11 +1,11 @@
 :root {
-    --primary-color: #000000;
-    --secondary-color: #333333;
-    --dark-bg: #1f2937;
-    --light-bg: #ffffff;
+    --primary-color: #ffffff;
+    --secondary-color: #cccccc;
+    --dark-bg: #000000;
+    --light-bg: #1a1a1a;
     --text-light: #ffffff;
-    --text-dark: #111827;
-    --gray-light: #f3f4f6;
+    --text-dark: #e0e0e0;
+    --gray-light: #333333;
     --gray-medium: #666666;
     --spacing: 2rem;
     --code-font: 'Fira Code', monospace;
@@ -20,8 +20,8 @@
 body {
     font-family: var(--code-font);
     line-height: 1.6;
-    color: var(--text-dark);
-    background-color: var(--light-bg);
+    color: var(--text-light);
+    background-color: var(--dark-bg);
 }
 
 .container {
@@ -32,7 +32,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: var(--dark-bg);
+    background: var(--light-bg);
     padding: calc(var(--spacing) * 3) 0;
     color: var(--text-light);
     position: relative;
@@ -80,7 +80,7 @@ body {
     font-size: 1.25rem;
     opacity: 0.9;
     font-family: var(--code-font);
-    color: var(--gray-light);
+    color: var(--gray-medium);
 }
 
 .minha-foto {
@@ -151,7 +151,7 @@ body {
 }
 
 .bg-dark {
-    background-color: var(--dark-bg);
+    background-color: var(--light-bg);
     color: var(--text-light);
 }
 
@@ -164,7 +164,7 @@ body {
 }
 
 .skill-card {
-    background: var(--light-bg);
+    background: var(--dark-bg);
     padding: var(--spacing);
     border: 1px solid var(--gray-medium);
     border-radius: 4px;
@@ -174,11 +174,11 @@ body {
 .skill-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    border-color: var(--text-dark);
+    border-color: var(--text-light);
 }
 
 .skill-icon {
-    color: var(--text-dark);
+    color: var(--text-light);
     width: 40px;
     height: 40px;
     margin-bottom: 1rem;
@@ -186,7 +186,7 @@ body {
 
 .skill-card h3 {
     margin-bottom: 0.5rem;
-    color: var(--text-dark);
+    color: var(--text-light);
     font-family: var(--code-font);
 }
 
@@ -212,7 +212,7 @@ body {
 }
 
 .experience-meta {
-    color: var(--gray-light);
+    color: var(--gray-medium);
     font-size: 0.9rem;
     margin-bottom: 1rem;
     font-family: var(--code-font);
@@ -226,7 +226,7 @@ body {
 
 .experience-item ul li::before {
     content: '> ';
-    color: var(--gray-light);
+    color: var(--gray-medium);
     font-family: var(--code-font);
 }
 
