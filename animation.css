@@ -1,0 +1,62 @@
+/* Fade in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-title,
+.hero-subtitle,
+.section-title,
+.section-text,
+.skill-card,
+.experience-item,
+.education-item,
+.social-links {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* Staggered animations */
+.hero-title { animation-delay: 0.2s; }
+.hero-subtitle { animation-delay: 0.4s; }
+.section-title { animation-delay: 0.2s; }
+.section-text { animation-delay: 0.4s; }
+
+.skill-card:nth-child(1) { animation-delay: 0.2s; }
+.skill-card:nth-child(2) { animation-delay: 0.4s; }
+.skill-card:nth-child(3) { animation-delay: 0.6s; }
+
+.experience-item:nth-child(1) { animation-delay: 0.2s; }
+.experience-item:nth-child(2) { animation-delay: 0.4s; }
+
+.education-item:nth-child(1) { animation-delay: 0.2s; }
+.education-item:nth-child(2) { animation-delay: 0.4s; }
+
+.social-links { animation-delay: 0.2s; }
+
+/* Hover effects for skill-card */
+.skill-card {
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: #333; /* Black border */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Active state border animation */
+.skill-card.active,
+.experience-item.active,
+.education-item.active {
+    border-color: #333;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
