@@ -1,11 +1,11 @@
 :root {
-    --primary-color: #ffffff;
+    --primary-color: #000000;
     --secondary-color: #333333;
-    --dark-bg: #000000;
+    --dark-bg: #1f2937;
     --light-bg: #ffffff;
     --text-light: #ffffff;
-    --text-dark: #000000;
-    --gray-light: #f0f0f0;
+    --text-dark: #111827;
+    --gray-light: #f3f4f6;
     --gray-medium: #666666;
     --spacing: 2rem;
     --code-font: 'Fira Code', monospace;

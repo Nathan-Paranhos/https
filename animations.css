@@ -1,140 +1,59 @@
-/* Typing Animation */
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
-@keyframes blink {
-    50% { border-color: transparent }
-}
-
-.hero-title {
-    animation: 
-        typing 3.5s steps(40, end),
-        blink .75s step-end infinite;
-}
-
-/* Matrix Rain Effect */
-@keyframes matrix-rain {
-    0% {
-        transform: translateY(-100%);
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
         opacity: 0;
+        transform: translateY(20px);
     }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-}
-
-/* Glitch Effect */
-@keyframes glitch {
-    0% {
-        clip-path: inset(50% 0 30% 0);
-        transform: translate(-5px, 5px);
-    }
-    20% {
-        clip-path: inset(15% 0 65% 0);
-        transform: translate(5px, -5px);
-    }
-    40% {
-        clip-path: inset(80% 0 5% 0);
-        transform: translate(5px, 5px);
-    }
-    60% {
-        clip-path: inset(25% 0 60% 0);
-        transform: translate(-5px, -5px);
-    }
-    80% {
-        clip-path: inset(70% 0 20% 0);
-        transform: translate(-5px, 5px);
-    }
-    100% {
-        clip-path: inset(50% 0 30% 0);
-        transform: translate(0);
-    }
-}
-
-.section-title:hover {
-    animation: glitch 1s linear infinite;
-}
-
-/* Skill Cards Animation */
-.skill-card {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.6s ease forwards;
-}
-
-@keyframes fadeInUp {
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.skill-card:nth-child(1) { animation-delay: 0.2s; }
-.skill-card:nth-child(2) { animation-delay: 0.4s; }
-.skill-card:nth-child(3) { animation-delay: 0.6s; }
-
-/* Terminal Typing Effect */
-@keyframes terminal-typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
-.experience-item {
-    position: relative;
-    overflow: hidden;
-}
-
-.experience-item::before {
-    content: '>';
-    position: absolute;
-    left: 10px;
-    color: var(--gray-light);
-    animation: blink 1s step-end infinite;
-}
-
-/* Social Links Hover Effect */
-.social-link:hover i {
-    animation: bounce 0.5s ease infinite;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-}
-
-/* Smooth Page Load */
 .hero-content, 
 .section,
 .skill-card,
 .experience-item,
 .social-link {
-    opacity: 0;
     animation: fadeIn 0.8s ease-out forwards;
 }
 
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+/* Stagger animations for skills */
+.skill-card:nth-child(1) { animation-delay: 0.2s; }
+.skill-card:nth-child(2) { animation-delay: 0.4s; }
+.skill-card:nth-child(3) { animation-delay: 0.6s; }
+
+/* Hover Effects */
+.skill-card {
+    transition: all 0.3s ease;
 }
 
-/* Loading animation for images */
-img {
-    transition: all 0.5s ease;
-    filter: grayscale(100%);
+.skill-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-img.loaded {
-    filter: grayscale(0%);
+.social-link {
+    transition: all 0.3s ease;
+}
+
+.social-link:hover i {
+    transform: scale(1.2);
 }
 
 /* Smooth scroll behavior */
 html {
     scroll-behavior: smooth;
+}
+
+/* Loading animation for images */
+img {
+    transition: opacity 0.3s ease;
+}
+
+img[loading] {
+    opacity: 0;
+}
+
+img.loaded {
+    opacity: 1;
 } 
