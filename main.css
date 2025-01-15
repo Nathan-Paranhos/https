@@ -284,3 +284,35 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* Education Section */
+.education-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing);
+    /* Removido opacity e transform para que a lista fique visível imediatamente */
+    opacity: 1;
+    transform: translateY(0);
+    transition: none; /* Remover transições desnecessárias */
+}
+
+.education-item {
+    margin-bottom: var(--spacing);
+    padding: var(--spacing);
+    border: 1px solid var(--gray-light);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-light);
+    opacity: 1; /* Garantir visibilidade */
+    transform: translateY(0); /* Garantir que não haja transformação */
+}
+
+.education-item h3 {
+    margin-bottom: 0.5rem;
+    font-family: var(--code-font);
+}
+
+.education-item p {
+    font-family: var(--code-font);
+    color: var(--gray-medium);
+}
