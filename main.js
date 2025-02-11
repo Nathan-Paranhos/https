@@ -1,7 +1,6 @@
-// Inicializa os ícones Lucide
 lucide.createIcons();
 
-// Função de Scroll Suave
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -11,7 +10,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Classe para o Carrossel de Habilidades
 class SkillsCarousel {
     constructor() {
         this.currentSlide = 0;
@@ -20,18 +18,16 @@ class SkillsCarousel {
         this.totalSlides = this.slides.length;
         this.autoPlayInterval = null;
 
-        // Inicializa o carrossel
         this.init();
     }
 
     init() {
-        // Cria os controles do carrossel
+
         this.createControls();
 
-        // Define o estado inicial
         this.updateSlides();
 
-        // Inicia o autoplay
+
         this.startAutoPlay();
     }
 
@@ -66,15 +62,13 @@ class SkillsCarousel {
     }
 
     updateSlides() {
-        // Atualiza a posição do carrossel
+
         this.container.style.transform = `translateX(-${this.currentSlide * 100}%)`;
 
-        // Atualiza o slide ativo
         this.slides.forEach((slide, index) => {
             slide.classList.toggle('active', index === this.currentSlide);
         });
 
-        // Atualiza os dots
         document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
             dot.classList.toggle('active', index === this.currentSlide);
         });
@@ -99,7 +93,7 @@ class SkillsCarousel {
         if (!this.autoPlayInterval) {
             this.autoPlayInterval = setInterval(() => {
                 this.next();
-            }, 3000); // Troca de slide a cada 3 segundos
+            }, 3000); 
         }
     }
 
@@ -109,20 +103,17 @@ class SkillsCarousel {
     }
 }
 
-// Inicializa o carrossel
 const skillsCarousel = new SkillsCarousel();
 
-// Para o autoplay quando o mouse passar sobre o carrossel
+
 document.querySelector('.skills-carousel').addEventListener('mouseover', () => {
     skillsCarousel.stopAutoPlay();
 });
 
-// Reinicia o autoplay quando o mouse sai do carrossel
 document.querySelector('.skills-carousel').addEventListener('mouseout', () => {
     skillsCarousel.startAutoPlay();
 });
 
-// Função para adicionar a classe 'visible' nas seções
 const sections = document.querySelectorAll('.section');
 const checkVisibility = () => {
     const scrollPosition = window.scrollY + window.innerHeight;
@@ -131,7 +122,6 @@ const checkVisibility = () => {
         const sectionTop = section.offsetTop;
         const sectionBottom = sectionTop + section.offsetHeight;
 
-        // Verifica se a seção está visível
         if (scrollPosition > sectionTop && scrollPosition < sectionBottom) {
             section.classList.add('visible');
         } else {
@@ -140,8 +130,6 @@ const checkVisibility = () => {
     });
 };
 
-// Chama a função sempre que o scroll mudar
 document.addEventListener('scroll', checkVisibility);
 
-// Verifica a visibilidade das seções quando a página for carregada
 checkVisibility();

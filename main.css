@@ -98,7 +98,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Sections */
 .section {
     padding: calc(var(--spacing) * 2) 0;
     position: relative;
@@ -190,7 +189,6 @@ body {
     font-family: var(--code-font);
 }
 
-/* Experience */
 .experience-list {
     max-width: 800px;
     margin: 0 auto;
@@ -230,7 +228,6 @@ body {
     font-family: var(--code-font);
 }
 
-/* Social Links */
 .social-links {
     display: flex;
     justify-content: center;
@@ -265,7 +262,6 @@ body {
     height: 24px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .hero-content {
         flex-direction: column-reverse;
@@ -285,15 +281,14 @@ body {
     }
 }
 
-/* Education Section */
 .education-list {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 var(--spacing);
-    /* Removido opacity e transform para que a lista fique visível imediatamente */
+
     opacity: 1;
     transform: translateY(0);
-    transition: none; /* Remover transições desnecessárias */
+    transition: none; 
 }
 
 .education-item {
@@ -303,8 +298,8 @@ body {
     border-radius: 4px;
     background: rgba(255, 255, 255, 0.05);
     color: var(--text-light);
-    opacity: 1; /* Garantir visibilidade */
-    transform: translateY(0); /* Garantir que não haja transformação */
+    opacity: 1; 
+    transform: translateY(0); 
 }
 
 .education-item h3 {
