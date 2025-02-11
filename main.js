@@ -38,23 +38,19 @@ class SkillsCarousel {
     createControls() {
         const carousel = document.querySelector('.skills-carousel');
 
-        // Botão de navegação "anterior"
         const prevButton = document.createElement('button');
         prevButton.className = 'carousel-button prev';
         prevButton.innerHTML = '<i data-lucide="chevron-left"></i>';
         prevButton.onclick = () => this.prev();
 
-        // Botão de navegação "próximo"
         const nextButton = document.createElement('button');
         nextButton.className = 'carousel-button next';
         nextButton.innerHTML = '<i data-lucide="chevron-right"></i>';
         nextButton.onclick = () => this.next();
 
-        // Dots de navegação
         const dots = document.createElement('div');
-        dots.className = 'carousel-dots';
+        dots.className = 'carousel-dots';   
 
-        // Cria os pontos para cada slide
         for (let i = 0; i < this.totalSlides; i++) {
             const dot = document.createElement('div');
             dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
@@ -62,12 +58,10 @@ class SkillsCarousel {
             dots.appendChild(dot);
         }
 
-        // Adiciona os controles ao carrossel
         carousel.appendChild(prevButton);
         carousel.appendChild(nextButton);
         carousel.appendChild(dots);
 
-        // Inicializa os ícones do Lucide nos botões
         lucide.createIcons();
     }
 
